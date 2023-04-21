@@ -1,3 +1,6 @@
 CrawlSwitchOnlyGames
 *.jpg
 !*_s.jpg
+
+get*.js
+*_full.json
