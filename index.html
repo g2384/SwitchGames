@@ -203,7 +203,7 @@
                     switchOnlyGames = parsed_data.split('\n');
                 });
 
-            fetch("./data_full.json")
+            fetch("./data.json")
                 .then(response => response.json())
                 .then(parsed_data => {
                     data = parsed_data;
