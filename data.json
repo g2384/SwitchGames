@@ -1,0 +1,207 @@
+{
+    "Luigi’s Mansion 3": {
+        "released": "2019-10-31",
+        "image": "luigi_mansion_3_s.jpg",
+        "series": "Luigi"
+    },
+    "Super Mario Odyssey": {
+        "released": "2017-10-27",
+        "image": "super_mario_odyssey_s.jpg",
+        "series": "Mario"
+    },
+    "Mario Kart 8 Deluxe": {
+        "released": "2017-04-27",
+        "image": "mario_kart_8_deluxe_s.jpg",
+        "series": "Mario Kart"
+    },
+    "Mario Strikers: Battle League": {
+        "released": "2022-06-09",
+        "image": "mario_strikers_battle_league_s.jpg",
+        "series": "Mario"
+    },
+    "Mario Golf: Super Rush": {
+        "released": "2021-06-24",
+        "image": "mario_golf_super_rush_s.jpg",
+        "series": "Mario"
+    },
+    "Mario Tennis Aces": {
+        "released": "2018-06-21",
+        "image": "mario_tennis_aces_s.jpg",
+        "series": "Mario"
+    },
+    "Super Mario Party": {
+        "released": "2018-10-04",
+        "image": "super_mario_party_s.jpg",
+        "series": "Mario Party"
+    },
+    "New Super Mario Bros. U Deluxe": {
+        "released": "2019-01-11",
+        "image": "new_super_mario_bros_u_deluxe_s.jpg",
+        "series": "Mario Bros"
+    },
+    "Super Mario 3D World + Bowser’s Fury": {
+        "released": "2021-02-12",
+        "image": "super_mario_3d_world_bowsers_fury_s.jpg",
+        "series": "Mario 3D"
+    },
+    "Splatoon 2": {
+        "released": "2017-07-20",
+        "image": "splatoon_2_s.jpg",
+        "series": "Splatoon"
+    },
+    "Splatoon 3": {
+        "released": "2022-09-08",
+        "image": "splatoon_3_s.jpg",
+        "series": "Splatoon"
+    },
+    "Animal Crossing: New Horizons": {
+        "released": "2020-03-20",
+        "image": "animal_crossing_new_horizons_s.jpg",
+        "series": "Animal Crossing"
+    },
+    "The Legend of Zelda: Breath of the Wild": {
+        "released": "2017-03-03",
+        "image": "the_legend_of_zelda_breath_of_the_wild_s.jpg",
+        "series": "Zelda"
+    },
+    "The Legend of Zelda: Link’s Awakening": {
+        "released": "2019-09-19",
+        "image": "the_legend_of_zelda_links_awakening_s.jpg",
+        "series": "Zelda"
+    },
+    "Xenoblade Chronicles 2": {
+        "released": "2017-12-01",
+        "image": "xenoblade_chronicles_2_s.jpg",
+        "series": "Xenoblade Chronicles"
+    },
+    "Xenoblade Chronicles Definitive Edition": {
+        "released": "2020-05-28",
+        "image": "xenoblade_chronicles_definitive_edition_s.jpg",
+        "series": "Xenoblade Chronicles"
+    },
+    "Xenoblade Chronicles 3": {
+        "released": "2022-07-28",
+        "image": "xenoblade_chronicles_3_s.jpg",
+        "series": "Xenoblade Chronicles"
+    },
+    "Xenoblade Chronicles 2: Torna ~ The Golden Country": {
+        "released": "2018-09-20",
+        "image": "xenoblade_chronicles_2_torna_the_golden_country_s.jpg",
+        "series": "Xenoblade Chronicles"
+    },
+    "Yoshi’s Crafted World": {
+        "released": "2019-03-29",
+        "image": "yoshis_crafted_world_s.jpg",
+        "series": "Yoshi"
+    },
+    "Super Mario Maker 2": {
+        "released": "2019-06-27",
+        "image": "super_mario_maker_2_s.jpg",
+        "series": "Mario"
+    },
+    "Super Mario 3D All-Stars": {
+        "released": "2020-09-17",
+        "image": "super_mario_3d_all_stars_s.jpg",
+        "series": "Mario 3D"
+    },
+    "Super Mario Bros. 35": {
+        "released": "2020-09-30",
+        "image": "super_mario_bros_35_s.jpg",
+        "series": "Mario Bros"
+    },
+    "Super Smash Bros. Ultimate": {
+        "released": "2018-12-07",
+        "image": "super_smash_bros_ultimate_s.jpg",
+        "series": "Super Smash"
+    },
+    "Hyrule Warriors: Age of Calamity": {
+        "released": "2020-11-20",
+        "image": "hyrule_warriors_age_of_calamity_s.jpg",
+        "series": "Zelda"
+    },
+    "The Legend of Zelda: Skyward Sword HD": {
+        "released": "2021-07-15",
+        "image": "the_legend_of_zelda_skyward_sword_hd_s.jpg",
+        "series": "Zelda"
+    },
+    "Hyrule Warriors: Definitive Edition": {
+        "released": "2018-05-17",
+        "image": "hyrule_warriors_definitive_edition_s.jpg",
+        "series": "Zelda"
+    },
+    "Mario + Rabbids Kingdom Battle": {
+        "released": "2017-08-28",
+        "image": "mario_rabbids_kingdom_battle_s.jpg",
+        "series": "Mario + Rabbids"
+    },
+    "Mario + Rabbids Sparks of Hope": {
+        "released": "2022-10-19",
+        "image": "mario_rabbids_sparks_of_hope_s.jpg",
+        "series": "Mario + Rabbids"
+    },
+    "Paper Mario: The Origami King": {
+        "released": "2020-07-16",
+        "image": "paper_mario_the_origami_king_s.jpg",
+        "series": "Mario"
+    },
+    "Mario Kart Live: Home Circuit": {
+        "released": "2020-10-15",
+        "image": "mario_kart_live_home_circuit_s.jpg",
+        "series": "Mario Kart"
+    },
+    "Mario Party Superstars": {
+        "released": "2021-10-28",
+        "image": "mario_party_superstars_s.jpg",
+        "series": "Mario Party"
+    },
+    "Kirby and the Forgotten Land": {
+        "released": "2022-03-25",
+        "image": "kirby_and_the_forgotten_land_s.jpg",
+        "series": "Kirby"
+    },
+    "Kirby Fighters 2": {
+        "released": "2020-09-22",
+        "image": "kirby_fighters_2_s.jpg",
+        "series": "Kirby"
+    },
+    "Kirby Star Allies": {
+        "released": "2018-03-16",
+        "image": "kirby_star_allies_s.jpg",
+        "series": "Kirby"
+    },
+    "Kirby’s Return to Dream Land Deluxe": {
+        "released": "2023-02-24",
+        "image": "kirbys_return_to_dream_land_deluxe_s.jpg",
+        "series": "Kirby"
+    },
+    "Kirby’s Dream Buffet": {
+        "released": "2022-08-16",
+        "image": "kirbys_dream_buffet_s.jpg",
+        "series": "Kirby"
+    },
+    "Bayonetta 3": {
+        "released": "2022-10-27",
+        "image": "bayonetta_3_s.jpg",
+        "series": "Bayonetta"
+    },
+    "Bayonetta 2 + Bayonetta 1": {
+        "released": "2021-12-22",
+        "image": "bayonetta_2_bayonetta_1_s.jpg",
+        "series": "Bayonetta"
+    },
+    "Bayonetta 2": {
+        "released": "2018-02-16",
+        "image": "bayonetta_2_s.jpg",
+        "series": "Bayonetta"
+    },
+    "Bayonetta": {
+        "released": "2018-02-16",
+        "image": "bayonetta_s.jpg",
+        "series": "Bayonetta"
+    },
+    "Bayonetta Origins: Cereza and the Lost Demon": {
+        "released": "2023-03-17",
+        "image": "bayonetta_origins_cereza_and_the_lost_demon_s.jpg",
+        "series": "Bayonetta"
+    }
+}

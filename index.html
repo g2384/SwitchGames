@@ -1,0 +1,206 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0 auto;
+            padding: 10px;
+            max-width: 2500;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 0.7rem;
+            box-shadow: 0 1px 10px 1px rgba(255, 255, 255, 0.15), 0 0 4px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        tbody td {
+            text-align: center;
+        }
+
+        tr th {
+            background-color: aliceblue;
+        }
+
+        tr:hover {
+            background-color: coral;
+        }
+
+        tr td:nth-child(1) {
+            font-weight: bold;
+        }
+
+        .item {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+
+    </div>
+    <script>
+        var switchOnlyGames = [];
+        var data;
+
+
+        function getGroupedBySeries(dataKeys) {
+            var groupedBySeries = {};
+            for (let i = 0; i < dataKeys.length; i++) {
+                const key = dataKeys[i];
+                var series = data[key]["series"];
+                data[key].title = key;
+                if (series in groupedBySeries) {
+                    groupedBySeries[series].push(data[key]);
+                }
+                else {
+                    groupedBySeries[series] = [data[key]];
+                }
+            }
+            return groupedBySeries;
+        }
+
+        function diff(A) {
+            return A.slice(1).map(function (n, i) { return n - A[i]; });
+        }
+
+        function loadPage() {
+            const dataKeys = Object.keys(data);
+            var groupedBySeries = getGroupedBySeries(dataKeys);
+
+            let seriesKeys = Object.keys(groupedBySeries);
+            seriesKeys.sort();
+            var trs = ["Date"].concat(seriesKeys);
+            var ths = {};
+            var minMonthDiff = 100;
+            for (let i = 0; i < seriesKeys.length; i++) {
+                let group = groupedBySeries[seriesKeys[i]];
+                let dates = group.map(e => { let e1 = e.released.split('-'); return (parseInt(e1[0]) - 2017) * 12 + parseInt(e1[1]) - 1 });
+                if (dates.length <= 1) {
+                    continue;
+                }
+                dates.sort(function (a, b) {
+                    return a - b;
+                });
+                console.log('dates: ' + dates);
+                let diffs = diff(dates);
+                console.log('diffs: ' + diffs);
+                let min = Math.min(...(diffs.filter(e => e != 0)));
+                console.log('min: ' + min);
+                if (minMonthDiff > min) {
+                    minMonthDiff = min;
+                }
+            }
+            if (minMonthDiff <= 0) {
+                minMonthDiff = 1;
+            }
+            console.log('min = ' + minMonthDiff)
+            for (let i = 2017; i <= 2023; i++) {
+                for (let m = 1; m <= 12; m++) {
+                    ths[i + "-" + m.toString().padStart(2, '0')] = Array.apply(null, Array(seriesKeys.length)).map(function () { })
+                }
+            }
+            const thsKeys = Object.keys(ths);
+            for (let i = 0; i < seriesKeys.length; i++) {
+                var value = groupedBySeries[seriesKeys[i]];
+                for (var v = 0; v < value.length; v++) {
+                    var vv = value[v];
+                    for (let m = 0; m < thsKeys.length; m++) {
+                        if (vv["released"].indexOf(thsKeys[m]) == 0) {
+                            var idx = trs.indexOf(vv['series']) - 1;
+                            if (idx < 0) {
+                                throw new Error('cannot find ' + vv['series'] + " " + vv.title);
+                            }
+                            ths[thsKeys[m]][idx] = "<img src='./images/" + vv.image + "'/><br>" + vv.title;//vv;
+                        }
+                    }
+                }
+            }
+            console.log(trs)
+            console.log(ths)
+            var ths3 = [];
+            for (let i = 0; i < thsKeys.length; i++) {
+                let th = ths[thsKeys[i]];
+                for (let j = 0; j < th.length; j++) {
+                    if (th[j] != undefined && th[j].indexOf("<") >= 0) {
+                        //console.log(th[j])
+                        for (let k = 1; k < minMonthDiff; k++) {
+                            ths[thsKeys[i + k]][j] = "DELETE";
+                        }
+                    }
+                }
+                let td = "<td>" + thsKeys[i] + "</td><td>" + ths[thsKeys[i]].filter(e => e != "DELETE").join("</td><td>") + "</td>";
+                td = td.replace(/<td><img/g, "<td class='item' rowspan='" + minMonthDiff + "'><img");
+                ths3.push("<tr>" + td + "</tr>")
+            }
+
+            var fistColumnWidth = Math.round(100 / (trs.length - 1) / 2);
+            var colGroup = ["<col span='1' style='width: " + fistColumnWidth + "%;'>"];
+            for (let i = 1; i < trs.length; i++) {
+                colGroup.push("<col span='1' style='width: " + (100 - fistColumnWidth) / (trs.length - 1) + "%;'>");
+            }
+            document.querySelector("#content").innerHTML = "<table>" + "<colgroup>" + colGroup.join("") + "</colgroup>" + "<tr><th>" + trs.join("</th><th>") + "</th></tr>" + ths3.join("") + "</table>";
+
+            let count = 0;
+            switchOnlyGames.forEach(e => {
+                let e1 = e.replace(/'/g, "’").replace(/–/g, "~")
+                if (dataKeys.indexOf(e) < 0 && dataKeys.indexOf(e1) < 0) {
+                    console.log(e);
+                    count++;
+                }
+            });
+            console.log("not included: " + count);
+
+            count = 0;
+            dataKeys.forEach(e => {
+                let e1 = e.replace(/’/g, "'").replace(/~/g, "–")
+                if (switchOnlyGames.indexOf(e) < 0 && switchOnlyGames.indexOf(e1) < 0) {
+                    console.log(e);
+                    count++;
+                }
+            });
+            console.log("extra: " + count);
+        }
+
+        window.addEventListener('load', function () {
+            fetch("./switch_only.txt")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    switchOnlyGames = parsed_data.split('\n');
+                });
+
+            fetch("./data_full.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    data = parsed_data;
+                    loadPage();
+                });
+            /*
+            fetch("./data_full.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    data_full = parsed_data;
+                    let localData = {};
+                    for (const [key, value] of data_full.entries()) {
+                        let obj = {};
+                        obj.released = value.released;
+                        obj.image = value.image;
+                        obj.series = value.series;
+                        localData[key] = obj;
+                    }
+                    console.log(JSON.stringify(localData));
+                });*/
+        });
+    </script>
+</body>
+
+</html>
